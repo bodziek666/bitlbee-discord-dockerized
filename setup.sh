@@ -14,4 +14,4 @@ else
 fi 
 
 echo "attemting first run of this container" 
-docker run -d -v "${HOME}/bitlbee":/var/lib/bitlbee -p 16667:6667 "${IMAGE}"
+docker run -d -v "${HOME}/bitlbee":/var/lib/bitlbee -p 127.0.0.1:16667:6667 "${IMAGE}"

@@ -6,14 +6,14 @@ Docker image is based on fedora 27 because it has all required packages out of t
 You may ask, why docker?
 Because it will just work on all distros without messing around with packages and dependendies and there are a lot of them.
 
-Anyway, after running this containter you would be able to conenct bo bitlbee from your favorite IRC client. Enjoy. 
+Anyway, after running this containter you will be able to conenct bo bitlbee from your favorite IRC client. Enjoy. 
 
 Quick how to use:
 1. Run container like this
 ```
 docker run -d -p <bitlbee_port_on_your_host>:6667 -v your/bitlbee/settings/dir/on/host:/var/lib/bitlbee bitlbee-discord
 ```
-or execute `setup.sh` script and them move to point 3.
+or execute `setup.sh` script and then move to point 3.
 
 2. After running this container just connect to it from your IRC client
 
