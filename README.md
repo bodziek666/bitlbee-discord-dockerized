@@ -10,17 +10,20 @@ Anyway, after running this containter you would be able to conenct bo bitlbee fr
 
 Quick how to use:
 1. Run container like this
-
-`docker run -d -p <bitlbee_port_on_your_host>:6667`-v your/bitlbee/settings/dir/on/host:/var/lib/bitlbee bitlbee-discord
+```
+docker run -d -p <bitlbee_port_on_your_host>:6667 -v your/bitlbee/settings/dir/on/host:/var/lib/bitlbee bitlbee-discord
+```
+or execute `setup.sh` script and them move to point 3.
 
 2. After running this container just connect to it from your IRC client
 
 3. Set up bitlbee to use discord by swtiching to "&bitlbee" window:
-`identify <bitlbee_password>`
-`account add eionrobb-discord <your@discord.mail> <discord_pass>``
-`account eionrobb-discord on`
-
-And you are connected!
+```
+identify <bitlbee_password>
+account add eionrobb-discord <your@discord.mail> <discord_pass>
+account eionrobb-discord on
+```
+And you are connected to Discord!
 
 Use `chat list eionrobb-discord` to list available rooms, then execute these commands to join one of them:
 
