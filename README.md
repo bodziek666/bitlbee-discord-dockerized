@@ -1,6 +1,6 @@
 Bitlbee Discord via Docker Container 
 
-This project uses bitlbee wih libpurple as IRC gateway and purple-discord plugin which allows us to connect to discord.
+This project uses bitlbee with libpurple as IRC gateway and purple-discord plugin which allows us to connect to discord.
 Docker image is based on fedora 27 because it has all required packages out of the box.
 
 You may ask, why docker?
