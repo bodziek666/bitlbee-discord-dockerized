@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.7
 RUN apk add --no-cache bitlbee bitlbee-dev autoconf automake libtool make gcc build-base git && \
   git clone https://github.com/sm00th/bitlbee-discord.git && \
   ln -s /usr/share/bitlbee /usr/local/share && \

@@ -15,9 +15,8 @@ Run `setup.sh` or follow these steps:
 docker run -d -p 127.0.0.1:<bitlbee_port_on_your_host>:6667 -v your/bitlbee/settings/dir/on/host:/var/lib/bitlbee bitlbee-discord
 ```
 you can also use -u flag (make sure that directory for your bitlbee settings exists!), for example: 
-```
-docker run -u $(id -u $USER):$(id -g $USER) -p 127.0.0.1:16667:6667 -v ${HOME}/docker/alpine:/var/lib/bitlbee bitlbee-discord
-
+``
+docker run -d -u $(id -u $USER):$(id -g $USER) -p 127.0.0.1:16667:6667 -v ${HOME}/docker/alpine:/var/lib/bitlbee bitlbee-discord
 ```
 2. After running this container just connect to it from your IRC client
 
@@ -36,5 +35,6 @@ Use `chat list discord` to list available rooms, then execute these commands to 
   chan #mydiscordchannel set auto_join true
   /join #mydiscordchannel
 ```
+To store your settings use `save` command. To login into bitlbee after connectiong use `identify <bitlbee_password>` command.  
 
 Further reading: bitlbee offical docs, bitlbee-dicord docs.
