@@ -15,7 +15,7 @@ Run `setup.sh` or follow these steps:
 docker run --restart on-failure -d -p 127.0.0.1:<bitlbee_port_on_your_host>:6667 -v your/bitlbee/settings/dir/on/host:/var/lib/bitlbee bitlbee-discord
 ```
 you can also use -u flag (make sure that directory for your bitlbee settings exists!), for example: 
-``
+```
 docker run --restart on-failure -d -u $(id -u $USER):$(id -g $USER) -p 127.0.0.1:<bitlbee_port_on_your_host>:6667 -v your/bitlbee/settings/dir/on/host:/var/lib/bitlbee bitlbee-discord
 ```
 2. After running this container just connect to it from your IRC client, for example:
