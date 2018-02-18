@@ -23,13 +23,13 @@ docker run -u $(id -u $USER):$(id -g $USER) -p 127.0.0.1:16667:6667 -v ${HOME}/d
 
 3. Set up bitlbee to use discord by swtiching to "&bitlbee" window:
 ```
-identify <bitlbee_password>
+register <bitlbee_password>
 account add discord <your@discord.mail> <discord_pass>
 account discord on
 ```
 And you are connected to Discord!
 
-Use `chat list eionrobb-discord` to list available rooms, then execute these commands to join one of them:
+Use `chat list discord` to list available rooms, then execute these commands to join one of them:
 
 ```
   chat add discord !1 #mydiscordchannel
