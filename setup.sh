@@ -14,4 +14,4 @@ else
 fi 
 
 echo "attemting first run of this container" 
-docker run -d -u $(id -u "${USER}"):$(id -g "${USER}") -v "${HOME}/.docker-bitlbee":/var/lib/bitlbee -p 127.0.0.1:16667:6667 "${IMAGE}"
+docker run --restart on-failure -d -u $(id -u "${USER}"):$(id -g "${USER}") -p 127.0.0.1:16667:6667 -v "${HOME}/.docker-bitlbee":/var/lib/bitlbee "${IMAGE}"
