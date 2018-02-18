@@ -12,14 +12,16 @@ Quick how to use:
 Run `setup.sh` or follow these steps:
 1. Run container like this
 ```
-docker run -d -p 127.0.0.1:<bitlbee_port_on_your_host>:6667 -v your/bitlbee/settings/dir/on/host:/var/lib/bitlbee bitlbee-discord
+docker run --restart on-failure -d -p 127.0.0.1:<bitlbee_port_on_your_host>:6667 -v your/bitlbee/settings/dir/on/host:/var/lib/bitlbee bitlbee-discord
 ```
 you can also use -u flag (make sure that directory for your bitlbee settings exists!), for example: 
 ``
-docker run -d -u $(id -u $USER):$(id -g $USER) -p 127.0.0.1:16667:6667 -v ${HOME}/docker/alpine:/var/lib/bitlbee bitlbee-discord
+docker run --restart on-failure -d -u $(id -u $USER):$(id -g $USER) -p 127.0.0.1:<bitlbee_port_on_your_host>:6667 -v your/bitlbee/settings/dir/on/host:/var/lib/bitlbee bitlbee-discord
 ```
-2. After running this container just connect to it from your IRC client
-
+2. After running this container just connect to it from your IRC client, for example:
+```
+/connect localhost 16667
+```
 3. Set up bitlbee to use discord by swtiching to "&bitlbee" window:
 ```
 register <bitlbee_password>
@@ -36,5 +38,16 @@ Use `chat list discord` to list available rooms, then execute these commands to 
   /join #mydiscordchannel
 ```
 To store your settings use `save` command. To login into bitlbee after connectiong use `identify <bitlbee_password>` command.  
+
+If you want to see offline people on discord channels run
+```
+account discord off
+account discord set never_offline on
+account discord on
+```
+If you want to see everyone from your channels in bitlbee window use this"  
+```
+account discord friendship_mode off
+```
 
 Further reading: bitlbee offical docs, bitlbee-dicord docs.
