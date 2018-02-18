@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-IMAGE="bitlbee-discord"
+IMAGE="bitlbee-discord-libpurple"
 
-if [[ ! -d "${HOME}/bitlbee" ]]; then
-  mkdir "${HOME}/bitlbee"
+if [[ ! -d "${HOME}/.docker-bitlbee-libpurple" ]]; then
+  mkdir "${HOME}/.docker-bitlbee-libpurple"
 fi
 
 if [[ $(command -v docker) ]]; then
@@ -14,4 +14,4 @@ else
 fi 
 
 echo "attemting first run of this container" 
-docker run -d -v "${HOME}/bitlbee":/var/lib/bitlbee -p 127.0.0.1:16667:6667 "${IMAGE}"
+docker run --restart on-failure -d -u $(id -u "${USER}"):$(id -g "${USER}") -p 127.0.0.1:16667:6667 -v "${HOME}/.docker-bitlbee-libpurple":/var/lib/bitlbee "${IMAGE}"
