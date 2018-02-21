@@ -1,5 +1,6 @@
-FROM debian:stretch-slim
-RUN apt-get update && apt-get install -y bitlbee bitlbee-common bitlbee-dev git libglib2.0-dev autotools-dev dh-autoreconf libtool-bin && \
+FROM debian:stretch
+RUN apt-get update && \ 
+  apt-get install --no-install-recommends -y bitlbee bitlbee-common bitlbee-dev git ca-certificates build-essential libglib2.0-dev autotools-dev dh-autoreconf libtool-bin && \
   git clone https://github.com/sm00th/bitlbee-discord.git && \
   ln -s /usr/share/bitlbee /usr/local/share && \
   cd /bitlbee-discord && ./autogen.sh && \
@@ -7,9 +8,7 @@ RUN apt-get update && apt-get install -y bitlbee bitlbee-common bitlbee-dev git 
   make && \
   make install && \
   libtool --finish /usr/lib/bitlbee && \
-  apt-get remove -y --purge git libglib2.0-dev autotools-dev dh-autoreconf libtool-bin && \
-  apt-get autoremove -y && \
-  apt-get clean -y && \
+  apt-get autoremove -y --purge git ca-certificates build-essential libglib2.0-dev autotools-dev dh-autoreconf libtool-bin && \
   rm -rf /bitlbee-discord && \
   rm -rf rm -rf /var/lib/apt/lists/*
 EXPOSE 6667
