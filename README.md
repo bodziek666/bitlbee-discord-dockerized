@@ -1,7 +1,7 @@
 Bitlbee Discord via Docker Container 
 
 This project uses bitlbee with bitlbee-discord plugin (see: https://github.com/sm00th/bitlbee-discord)
-Docker image is based on latest alpine linux release.
+Docker image is based on debian stretch slim.
 
 You may ask, why docker?
 Because it will just work on all distros without messing around with packages, dependencies and manual building. 
